@@ -31,7 +31,32 @@ import time
 #########################################################
 #                   Your Code Goes Below                #
 #########################################################
+def drawsquare(myturtle=None, width=0, top_left_x=0, top_left_y=0):
+  side=2
+  for i in range(4):
+    darty.forward(side)
+    darty.left(90)
 
+def drawLine(myturtle=None, x_start=0, y_start=0, x_end=0, y_end=0):
+  darty.backward(1)
+  darty.forward(2)
+
+def drawCircle(myturtle=None, radius=0):
+  radius = 1
+  dartyl.circle(radius)
+
+def setUpDartboard(myscreen=None, myturtle=None):
+  
+
+def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=0):
+
+def throwDart(myturtle=None):
+
+def playDarts(myturtle=None):
+
+def montePi(myturtle=None, num_darts=0):
+  
+    
 
 
 #########################################################
