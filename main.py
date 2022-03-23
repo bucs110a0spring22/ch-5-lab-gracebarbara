@@ -64,36 +64,48 @@ def setUpDartboard(myscreen=None, myturtle=None):
   drawCircle(myturtle, 1)
 
 def throwDart(myturtle=None):
-  randx = random.uniform(-1, 1)
-  randy = random.uniform(-1, 1)
-  distance = myturtle.distance(randx, randy)
   myturtle.penup()
-  if distance > 1:
-    myturtle.goto(randx, randy)
-    myturtle.dot("red")
-  else:
+  randx = random.uniform(-1,1)
+  randy = random.uniform(-1,1)
+  myturtle.goto(0,0)
+  distance = myturtle.distance(randx, randy)
+  if distance < 1:
     myturtle.goto(randx, randy)
     myturtle.dot("green")
-  return randx, randy
+  else:
+    myturtle.goto(randx, randy)
+    myturtle.dot("red")
+  return distance
 
 def isInCircle(myturtle=None):
+  randx = random.uniform(-1,1)
+  randy = random.uniform(-1,1)
+  myturtle.goto(0,0)
   distance = myturtle.distance(randx, randy)
-  if distance > 1:
-    return False
-  else:
+  if distance < 1:
     return True
+  else:
+    return False
 
-def playDarts(myturtle=0):
+def playDarts(myturtle=None):
   score_player_one = 0
   score_player_two = 0
   for turn in range(10):
-    throwDart(darty)
-    if isInCircle(darty) == True:
+    throwDart(myturtle)
+    if isInCircle(myturtle) == True:
       score_player_one += 1
-    throwDart(darty)
-    if isinCircle(darty) == False:
+    throwDart(myturtle)
+    if isInCircle(myturtle) == False:
       score_player_two += 1
+  print("Player 1: ", score_player_one)
+  print("Player 2: ", score_player_two)
 
+def montePi(myturtle=None, number_darts=0):
+  inside_count = 0
+  for i in range(number_darts):
+    if isInCircle(myturtle) == True:
+      inside_count += 1
+  
 
 
 
@@ -101,7 +113,7 @@ def playDarts(myturtle=0):
 #         Do not alter any code below here              #
 #       Your code must work with the main proivided     #
 #########################################################
-  def main():
+def main():
     # Get number of darts for simulation from user
     # Note continuation character <\> so we don't go over 78 columns:
     print("This is a program that simulates throwing darts at a dartboard\n" \
