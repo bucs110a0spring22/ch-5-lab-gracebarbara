@@ -63,46 +63,38 @@ def setUpDartboard(myscreen=None, myturtle=None):
   drawLine(myturtle, 0, -1, 0, 1)
   drawCircle(myturtle, 1)
 
-#def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=0):
-  #randx = random.uniform(-1, 1)
-  #randy = random.uniform(-1, 1)
-  #circ_eq = (randx - circle_center_x)**2 + (randy - circle_center_y)**2
-  #rad_eq = radius**2
-  #if circ_eq < rad_eq:
-    #myturtle.goto(randx, randy)
-    #myturtle.pendown()
-    #myturtle.dot("green")
-    #myturtle.penup()
-  #else:
-    #myturtle.goto(randx, randy)
-    #myturtle.pendown()
-    #myturtle.dot("red")
-    #myturtle.penup()
-
-
-def throwDart(myturtle=0):
+def throwDart(myturtle=None):
   randx = random.uniform(-1, 1)
   randy = random.uniform(-1, 1)
   distance = myturtle.distance(randx, randy)
+  myturtle.penup()
   if distance > 1:
     myturtle.goto(randx, randy)
-    myturtle.pendown()
     myturtle.dot("red")
-    myturtle.penup()
   else:
     myturtle.goto(randx, randy)
-    myturtle.pendown()
     myturtle.dot("green")
-    myturtle.penup()
+  return randx, randy
+
+def isInCircle(myturtle=None):
+  distance = myturtle.distance(randx, randy)
+  if distance > 1:
+    return False
+  else:
+    return True
 
 def playDarts(myturtle=0):
-  
- 
-  
+  score_player_one = 0
+  score_player_two = 0
+  for turn in range(10):
+    throwDart(darty)
+    if isInCircle(darty) == True:
+      score_player_one += 1
+    throwDart(darty)
+    if isinCircle(darty) == False:
+      score_player_two += 1
 
-  
-  
-    
+
 
 
 #########################################################
@@ -151,4 +143,4 @@ def playDarts(myturtle=0):
     # Don't hide or mess with window while it's 'working'
     window.exitonclick()
 
-main() 
+main()
