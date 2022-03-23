@@ -75,18 +75,14 @@ def throwDart(myturtle=None):
   else:
     myturtle.goto(randx, randy)
     myturtle.dot("red")
-  return distance
 
-def isInCircle(myturtle=None):
-  randx = random.uniform(-1,1)
-  randy = random.uniform(-1,1)
-  myturtle.goto(0,0)
-  distance = myturtle.distance(randx, randy)
-  if distance < 1:
-    return True
-  else:
+def isInCircle(myturtle=None, circle_center_x=0, circle_center_y=0, radius=0):
+  distance = myturtle.distance(circle_center_x, circle_center_y)
+  if distance > 1:
     return False
-
+  else:
+    return True
+    
 def playDarts(myturtle=None):
   score_player_one = 0
   score_player_two = 0
@@ -95,18 +91,20 @@ def playDarts(myturtle=None):
     if isInCircle(myturtle) == True:
       score_player_one += 1
     throwDart(myturtle)
-    if isInCircle(myturtle) == False:
+    if isInCircle(myturtle) == True:
       score_player_two += 1
-  print("Player 1: ", score_player_one)
-  print("Player 2: ", score_player_two)
+  print("Player 1 Score: ", score_player_one)
+  print("Player 2 Score: ", score_player_two)
 
 def montePi(myturtle=None, number_darts=0):
   inside_count = 0
   for i in range(number_darts):
+    throwDart(myturtle)
     if isInCircle(myturtle) == True:
       inside_count += 1
-  
-
+  ratio = inside_count / number_darts
+  approx_pi = ratio * 4
+  return approx_pi
 
 
 #########################################################

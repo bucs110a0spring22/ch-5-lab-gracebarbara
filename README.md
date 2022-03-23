@@ -8,7 +8,7 @@
 _Replace anything surrounded by the `< >` symbols._
 
 ## SUMMARY:
- < Provide a short description of your program's functionality. No more than a couple sentences. >
+ Using for loops and basic commands within multiple functions (including drawline, drawsquare and drawcircle) I was able to call to each of them in the setupdartboard function in order to draw the board. Then, I used an if statement within another function in order to throw a dart and assign it a color based on whether it fell inside or outside of the board. Another if statement that returned boolean values was used within the isincircle function inorder to determine whether a point would be added to the players score in the play darts game. The play darts game uses another for loop, an accumuator and the existing throwdart function to simulate a back and fourth dart game between two players. Finally, using a monte carlo simulator that includes an accumulator and a loop I was able to find an estimation for pi from the fomula (# darts in circle/total darts)*4. 
 
 ## GRACE DAYS
 Grace days used for this assignment: 0
@@ -16,10 +16,10 @@ Grace days used for this assignment: 0
 Grace days remaining: 5/5
 
 ## KNOWN BUGS AND INCOMPLETE PARTS:
- < What parts of the project you were not able to complete >
+ None
 
 ## REFERENCES:
- < List any outside resources used >
+ https://docs.python.org/3/library/turtle.html?highlight=turtle%20distance#turtle.distance
 
 ## MISCELLANEOUS COMMENTS:
- < Anything you would like the grader to know >
+ None
